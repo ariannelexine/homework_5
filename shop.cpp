@@ -38,7 +38,7 @@ int main()
         else if( key == 5 )
             newView.print_documentation();
         else                                //user error, change to throw exception
-            cout << "yYu didnt enter a valid command. Please try again..." << endl;
+            cout << "You didnt enter a valid command. Please try again..." << endl;
     }
     
     
