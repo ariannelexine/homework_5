@@ -1,6 +1,6 @@
 //
 //  create_parts.cpp
-//  
+//
 //
 //  Created by Anena V Sims on 10/9/16.
 //
@@ -18,6 +18,7 @@ CreateParts::CreateParts()
 {
     //default constructor
 }
+
 
 void CreateParts::setName( string n )
 {

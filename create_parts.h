@@ -1,6 +1,6 @@
 //
 //  create_parts.h
-//  
+//
 //
 //  Created by Anena V Sims on 10/9/16.
 //
@@ -18,7 +18,7 @@ class CreateParts
     public:
     CreateParts();                  //defalut constructor (sets all private to null)
     void log();
-    
+
     //getters and setters
     void setName( string n );
     string getName();
@@ -32,7 +32,7 @@ class CreateParts
     double getCost();
     void setDescription( string desc );
     string getDescription();
-    
+
     private:
     string name;
     int partNumber;
