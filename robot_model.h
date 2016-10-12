@@ -1,10 +1,10 @@
 #ifndef __ROBOT_MODEL_H
 #define __ROBOT_MODEL_H 2016
 
-#include "robot_parts.h"
+#include "create_parts.h"
 class Robot_Model {
   public:
-    Robot_Model (Robot_Parts& parts) : robot_parts(parts) { }
+    Robot_Model (CreateParts& parts) : create_parts(parts) { }
     string get_name();
     string get_type();
     void set_name();
@@ -12,6 +12,6 @@ class Robot_Model {
   private:
     string name();
     string model_type();
-    Robot_Parts& robot_parts;
+    CreateParts& create_parts;
 };
 #endif
