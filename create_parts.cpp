@@ -1,12 +1,5 @@
-//
-//  create_parts.cpp
-//
-//
-//  Created by Anena V Sims on 10/9/16.
-//
-//
 
-#include <iostream>
+#include "std_lib_facilities.h"
 #include "create_parts.h"
 #include "view.h"
 #include "robot_model.h"
@@ -14,9 +7,16 @@
 using namespace std;
 
 
-CreateParts::CreateParts()
+CreateParts::CreateParts(string iName, int iPartNumber, string iComponentType, double iWeight, double iCost, string iDescription)
 {
     //default constructor
+    setName(iName);
+    setPartNumber(iPartNumber);
+    setComponentType(iComponentType);
+    setWeight(iWeight);
+    setCost(iCost);
+    setDescription(iDescription);
+    
 }
 
 
@@ -50,7 +50,7 @@ string CreateParts::getComponentType()
     return componentType;
 }
 
-void CreateParts::setWeigth( double w )
+void CreateParts::setWeight( double w )
 {
     weight = w;
 }

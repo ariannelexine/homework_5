@@ -1,19 +1,18 @@
 //
 
-#include <iostream>
-#include <string>
+#include "std_lib_facilities.h"
 #include "create_parts.h"
 #include "view.h"
 #include "robot_model.h"
 
 
-using namespace std;
-
 int main()
 {
-    CreateParts newPart;
     View newView;
     int key = 0;
+    
+    vector<CreateParts> parts;
+
 
     while( key != 4 )           // accout for if the it is not a number--
     {                           // you could use isdigit(); found in #include <cctype> library
@@ -22,9 +21,37 @@ int main()
 
         //test conditions for user input
         if( key == 1 )
-            cout << "You selected create" << endl;
+        {
+            string name, type, description;
+            int partNumber;
+            double weight, cost;
+            
+            cout << "Enter name: ";
+            cin.ignore();
+            getline(cin, name);
+            cout << "Enter part number: ";
+            cin >> partNumber;
+            cout << "Enter component type: ";
+             cin.ignore();
+            getline(cin, type);
+            cout << "Enter weight: ";
+            cin >> weight;
+            cout << "Enter cost: ";
+            cin >> cost;
+            cout << "Enter description: ";
+            cin.ignore();
+            getline(cin, description);
+            
+            parts.push_back(CreateParts(name, partNumber, type, weight, cost,
+                                        description));
+        
+        }
+        
         else if( key == 2 )
-            cout << "You selected Report" << endl;
+        {
+           cout << parts[0].getName();
+           cout << parts[1].getName();
+        }
         else if( key == 3 )
             cout << "you selected save" << endl;
         else if( key == 4 )
