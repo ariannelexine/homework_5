@@ -33,7 +33,7 @@ class CreateParts
     void setDescription( string desc );
     string getDescription();
 
-    private:
+    protected:
     string name;
     int partNumber;
     string componentType;
