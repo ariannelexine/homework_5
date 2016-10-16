@@ -1,0 +1,149 @@
+# depslib dependency file v1.0
+1476486204 source:c:\users\pdevo\desktop\robbierobot\arm.cpp
+	"std_lib_facilities.h"
+	"arm.h"
+
+1476486204 c:\users\pdevo\desktop\robbierobot\std_lib_facilities.h
+	<iostream>
+	<fstream>
+	<sstream>
+	<cmath>
+	<cstdlib>
+	<string>
+	<list>
+	<vector>
+	<algorithm>
+	<stdexcept>
+	<hash_map>
+	<ext/hash_map>
+	<iomanip>
+
+1476516263 c:\users\pdevo\desktop\robbierobot\arm.h
+	"robotParts.h"
+
+1476513438 c:\users\pdevo\desktop\robbierobot\robotparts.h
+
+1476549197 source:c:\users\pdevo\desktop\robbierobot\battery.cpp
+	"std_lib_facilities.h"
+	"battery.h"
+
+1476486204 c:\users\pdevo\desktop\robbierobot\battery.h
+	"robotParts.h"
+
+1476558628 source:c:\users\pdevo\desktop\robbierobot\controller.cpp
+	"std_lib_facilities.h"
+	"controller.h"
+	"view.h"
+
+1476555537 c:\users\pdevo\desktop\robbierobot\controller.h
+	"std_lib_facilities.h"
+	"robotparts.h"
+	"createRobotParts.h"
+	"robotModels.h"
+	"torso.h"
+	"head.h"
+	"arm.h"
+	"locomotor.h"
+	"battery.h"
+
+1476514922 c:\users\pdevo\desktop\robbierobot\createrobotparts.h
+	"std_lib_facilities.h"
+	"robotparts.h"
+	"head.h"
+	"torso.h"
+	"arm.h"
+	"locomotor.h"
+	"battery.h"
+
+1476516242 c:\users\pdevo\desktop\robbierobot\head.h
+	"robotParts.h"
+
+1476542390 c:\users\pdevo\desktop\robbierobot\torso.h
+	"robotParts.h"
+	"std_lib_facilities.h"
+
+1476516212 c:\users\pdevo\desktop\robbierobot\locomotor.h
+	"robotParts.h"
+
+1476486204 c:\users\pdevo\desktop\robbierobot\robotmodels.h
+	"createRobotParts.h"
+
+1476486204 c:\users\pdevo\desktop\robbierobot\view.h
+
+1476486204 source:c:\users\pdevo\desktop\robbierobot\create_parts.cpp
+	<iostream>
+	"create_parts.h"
+	"view.h"
+	"robot_model.h"
+
+1476486204 c:\users\pdevo\desktop\robbierobot\create_parts.h
+	<iostream>
+
+1476486204 c:\users\pdevo\desktop\robbierobot\robot_model.h
+	"create_parts.h"
+
+1476555537 source:c:\users\pdevo\desktop\robbierobot\createrobotparts.cpp
+	"std_lib_facilities.h"
+	"createRobotParts.h"
+
+1476486204 source:c:\users\pdevo\desktop\robbierobot\customer.cpp
+	"std_lib_facilities.h"
+	"customer.h"
+
+1476486204 c:\users\pdevo\desktop\robbierobot\customer.h
+	"std_lib_facilities.h"
+	"orders.h"
+
+1476486204 c:\users\pdevo\desktop\robbierobot\orders.h
+	"std_lib_facilities.h"
+
+1476486204 source:c:\users\pdevo\desktop\robbierobot\head.cpp
+	"std_lib_facilities.h"
+	"head.h"
+
+1476486204 source:c:\users\pdevo\desktop\robbierobot\locomotor.cpp
+	"std_lib_facilities.h"
+	"locomotor.h"
+
+1476510346 source:c:\users\pdevo\desktop\robbierobot\main.cpp
+	<iostream>
+
+1476486204 source:c:\users\pdevo\desktop\robbierobot\orders.cpp
+	"orders.h"
+
+1476486204 source:c:\users\pdevo\desktop\robbierobot\robot_model.cpp
+	"std_lib_facilities.h"
+	"robot_model.h"
+
+1476486204 source:c:\users\pdevo\desktop\robbierobot\robotmodels.cpp
+	"std_lib_facilities.h"
+	"robotModels.h"
+
+1476486204 source:c:\users\pdevo\desktop\robbierobot\robotparts.cpp
+	"std_lib_facilities.h"
+	"robotParts.h"
+
+1476486204 source:c:\users\pdevo\desktop\robbierobot\sales_associate.cpp
+	"sales_associate.h"
+	"std_lib_facilities.h"
+
+1476486204 c:\users\pdevo\desktop\robbierobot\sales_associate.h
+	"std_lib_facilities.h"
+	"customer.h"
+	"robot_model.h"
+
+1476559878 source:c:\users\pdevo\desktop\robbierobot\torso.cpp
+	"std_lib_facilities.h"
+	"torso.h"
+
+1476555537 source:c:\users\pdevo\desktop\robbierobot\view.cpp
+	"std_lib_facilities.h"
+	"view.h"
+
+1476510456 source:c:\users\pdevo\desktop\robbierobot\shop.cpp
+	"std_lib_facilities.h"
+	"view.h"
+	"robotparts.h"
+	"createRobotParts.h"
+	"controller.h"
+

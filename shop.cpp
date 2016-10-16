@@ -1,56 +1,30 @@
 //
-
 #include "std_lib_facilities.h"
-#include "create_parts.h"
 #include "view.h"
-#include "robot_model.h"
-
+#include "robotparts.h"
+#include "createRobotParts.h"
+#include "controller.h"
 
 int main()
 {
     View newView;
-    int key = 0;
-    
-    vector<CreateParts> parts;
+    CreateRobotParts robotPartConstruct;
+    Controller controller(robotPartConstruct);
+    double key = 0;
 
-
-    while( key != 4 )           // accout for if the it is not a number--
-    {                           // you could use isdigit(); found in #include <cctype> library
+    while( key != 4 )
+    {
         newView.main_menu();
         cin >> key;
 
         //test conditions for user input
-        if( key == 1 )
-        {
-            string name, type, description;
-            int partNumber;
-            double weight, cost;
-            
-            cout << "Enter name: ";
-            cin.ignore();
-            getline(cin, name);
-            cout << "Enter part number: ";
-            cin >> partNumber;
-            cout << "Enter component type: ";
-             cin.ignore();
-            getline(cin, type);
-            cout << "Enter weight: ";
-            cin >> weight;
-            cout << "Enter cost: ";
-            cin >> cost;
-            cout << "Enter description: ";
-            cin.ignore();
-            getline(cin, description);
-            
-            parts.push_back(CreateParts(name, partNumber, type, weight, cost,
-                                        description));
-        
+        if(key == 1){
+            controller.partsController();
         }
-        
+
         else if( key == 2 )
         {
-           cout << parts[0].getName();
-           cout << parts[1].getName();
+           controller.modelController();
         }
         else if( key == 3 )
             cout << "you selected save" << endl;

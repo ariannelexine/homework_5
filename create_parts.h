@@ -8,9 +8,7 @@
 
 #ifndef create_parts_h
 #define create_parts_h
-
 #include <iostream>
-#include <string>
 
 using namespace std;
 
@@ -18,7 +16,7 @@ using namespace std;
 class CreateParts
 {
     public:
-    CreateParts(string iName, int iPartNumber, string iComponentType, double iWeight, double iCost, string iDescription);                  //defalut constructor (sets all private to null)
+    CreateParts();                  //defalut constructor (sets all private to null)
     void log();
 
     //getters and setters
@@ -28,7 +26,7 @@ class CreateParts
     int getPartNumber();
     void setComponentType( string type );
     string getComponentType();
-    void setWeight( double w );
+    void setWeigth( double w );
     double getWeight();
     void setCost( double c );
     double getCost();
