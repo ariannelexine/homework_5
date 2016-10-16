@@ -19,6 +19,7 @@
    	}
     //friend ostream &operator<<(ostream &output, const Torso &t);
     void displayTorso(ostream &output, Torso &t);
+    void displayTorso();
  };
 
  #endif

@@ -20,5 +20,6 @@
    	double getPowerConsumed();
    	void setMaxSpeed(int speed);
    	int getMaxSpeed();
+   	void displayLocomotor();
  };
  #endif

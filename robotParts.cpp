@@ -3,7 +3,7 @@
 
 
 	RobotParts::RobotParts(string n, int p, string t, double w, double c, string d){
-   		name =n;
+   		name = n;
    		partNumber = p;
    		type = t;
    		weight = w;

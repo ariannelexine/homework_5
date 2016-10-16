@@ -11,5 +11,6 @@
 
      };
  	Head(string n, int p, string t, double w, double c, string d) : RobotParts(n, p, t, w, c, d){};
+ 	void displayHeads();
  };
  #endif

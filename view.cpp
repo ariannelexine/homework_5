@@ -24,7 +24,8 @@ void View::createParts_menu(){
     cout << "1.3) Create Arm\n";
     cout << "1.4) Create Locomotor\n";
     cout << "1.5) Create Battery\n";
-    cout << "1.6) Main Menu\n";
+    cout << "1.6) Display Parts\n";
+    cout << "1.7) Main Menu\n";
     cout << "Command?: ";
 }
 void View::createModels_menu(){

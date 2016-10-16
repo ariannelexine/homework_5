@@ -2,7 +2,8 @@
 #include "createRobotParts.h"
 
 /*THESE ARE USED TO CREATE PARTS FOR THE ROBOT AND ARE STORED IN VECTOR OF CLASSES*/
-void CreateRobotParts::createHead(){
+void CreateRobotParts::createHead()
+{
 	string name, type, description;
 	int partNumber;
 	double weight, cost;
@@ -14,8 +15,9 @@ void CreateRobotParts::createHead(){
 	cout<< "Part Number?: ";
 	cin >> partNumber;
 	cin.ignore();
-	cout <<"Type?: ";
-	getline(cin, type);
+	//cout <<"Type?: ";
+	//getline(cin, type);
+	type = "Head";
 	cout<<"Weight?: ";
 	cin >> weight;
 	cin.ignore();
@@ -27,6 +29,7 @@ void CreateRobotParts::createHead(){
 	//PUT ALL THESE ANSWERS INTO THE VECTOR allHeads.
 	Head h(name, partNumber, type, weight, cost, description);
 	allHeads.push_back(h);
+
 }
 void CreateRobotParts::createTorso(){
 	string name, type, description;
@@ -74,8 +77,9 @@ void CreateRobotParts::createArm(){
 	cout<< "Part Number?: ";
 	cin >> partNumber;
 	cin.ignore();
-	cout <<"Type?: ";
-	getline(cin, type);
+	//cout <<"Type?: ";
+	//getline(cin, type);
+	type = "Arm";
 	cout<<"Weight?: ";
 	cin >> weight;
 	cin.ignore();
@@ -84,7 +88,7 @@ void CreateRobotParts::createArm(){
 	cin.ignore();
 	cout <<"Descritpion?: ";
 	getline(cin, description);
-	cout <<"Battery Compartments?: ";
+	cout <<"Power consumed?: ";
 	cin >> powerConsumed;
 	cin.ignore();
 	Arm a(name, partNumber, type, weight, cost, description, powerConsumed);
@@ -100,8 +104,9 @@ void CreateRobotParts::createLocomotor(){
 	getline(cin, name);
 	cout<< "Part Number?: ";
 	cin >> partNumber;
-	cout <<"Type?: ";
-	getline(cin, type);
+	//cout <<"Type?: ";
+	//getline(cin, type);
+	type = "Locomotor";
 	cout<<"Weight?: ";
 	cin >> weight;
 	cin.ignore();
@@ -130,8 +135,9 @@ void CreateRobotParts::createBattery(){
 	cout<< "Part Number?: ";
 	cin >> partNumber;
 	cin.ignore();
-	cout <<"Type?: ";
-	getline(cin, type);
+	//cout <<"Type?: ";
+	//getline(cin, type);
+	type = "Battery";
 	cout<<"Weight?: ";
 	cin >> weight;
 	cin.ignore();
@@ -156,7 +162,7 @@ void CreateRobotParts::showHeads(){
  		else{
  			int i;
  			for(i=0; i < allHeads.size(); i++)
- 				cout <<i<<") "<<allHeads.at(i).getName()<<endl;
+ 				cout <<i<<") "<< allHeads.at(i).getName()<<endl;
  		}
  	}
  	void CreateRobotParts::showTorsos(){
@@ -199,3 +205,36 @@ void CreateRobotParts::showHeads(){
  				cout <<i<<") "<<allBatteries.at(i).getName()<<endl;
  		}
  	}
+void CreateRobotParts::displayParts()
+{
+    cout << "\n********  Head Display ************" << endl;
+    if(allHeads.size() == 0)
+        cout << "\nNo head created\n";
+    else
+        for(int i = 0; i < allHeads.size(); i++)
+            allHeads[i].displayHeads();
+    cout << "\n********  Arm Display ************" << endl;
+    if(allArms.size() == 0)
+        cout << "\nNo Arms created\n";
+    else
+        for(int i = 0; i < allArms.size(); i++)
+            allArms[i].displayArm();
+    cout << "\n********  Torso Display ************" << endl;
+    if(allTorsos.size() == 0)
+        cout << "\nNo Torso created\n";
+    else
+        for(int i = 0; i < allTorsos.size(); i++)
+            allTorsos[i].displayTorso();
+    cout << "\n********  Locomotor Display ************" << endl;
+    if(allLocomotors.size() == 0)
+        cout << "\nNo Locomotors created\n";
+    else
+        for(int i = 0; i < allLocomotors.size(); i++)
+            allLocomotors[i].displayLocomotor();
+    cout << "\n********  Battery Display ************" << endl;
+    if(allBatteries.size() == 0)
+        cout << "\nNo Battery created\n";
+    else
+        for(int i = 0; i < allBatteries.size(); i++)
+            allBatteries[i].displayBattery();
+}

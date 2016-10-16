@@ -12,4 +12,15 @@
    	int Locomotor::getMaxSpeed(){
    		return maxSpeed;
    	}
-   	
+
+    void Locomotor::displayLocomotor()
+    {
+        cout << "\nName: " << RobotParts::getName() << endl;
+        cout << "Part #: " << RobotParts::getPartNumber() << endl;
+        cout << "Type: " << RobotParts::getType() << endl;
+        cout << "Weight: " << RobotParts::getWeight() << endl;
+        cout << "Cost: " << RobotParts::getCost() << endl;
+        cout << "Description: " << RobotParts::getDescription() << endl;
+        cout << "Power Consumed: " << getPowerConsumed() << endl;
+        cout << "Maximum Speed: " << getMaxSpeed() << endl;
+    }

@@ -33,6 +33,8 @@
  	Arm getArmAt(int i);
  	Locomotor getLocomotorAt(int i);
  	Battery getBatteryAt(int i);
+ 	void displayParts();
+ 	CreateRobotParts(){};
  };
 
  inline Torso CreateRobotParts::getTorsoAt(int i)

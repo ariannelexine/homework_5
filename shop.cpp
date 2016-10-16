@@ -4,12 +4,15 @@
 #include "robotparts.h"
 #include "createRobotParts.h"
 #include "controller.h"
+#include "robotModels.h"
 
 int main()
 {
     View newView;
     CreateRobotParts robotPartConstruct;
     Controller controller(robotPartConstruct);
+    //RobotModels robotModel(robotPartConstruct);
+
     double key = 0;
 
     while( key != 4 )

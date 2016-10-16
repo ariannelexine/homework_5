@@ -5,13 +5,25 @@
  class RobotModels
 {
 private:
-	string modelName;
-	int modelNumber;
-	double modelPrice;
-	vector<RobotModels> robotModels;
-	//CreateRobotParts& robotPartsAddress;
+	struct model
+ 	{
+ 	    string modelName;
+ 	    string modelNumber;
+ 	    double modelPrice;
+ 	    Torso torso;
+ 	    Locomotor locomotor;
+ 	    Head head;
+ 	    vector<Arm> arms;
+ 	    vector<Battery> batteries;
+ 	};
+ 	vector <model> allModel;
+ 	int armSize;
+ 	int batterySize;
+
 public:
-     void createRobotModels();
-     //RobotModels(CreateRobotParts & r) : robotPartsAddress(r) {};
+     RobotModels();
+     void createRobotModels(CreateRobotParts&);
+     void displayRobotModel();
+
  };
  #endif

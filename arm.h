@@ -16,5 +16,6 @@
    	};
    	void setPowerConsumed(double power);
    	double getPowerConsumed();
+   	void displayArm();
  };
  #endif

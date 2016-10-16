@@ -19,6 +19,15 @@ ostream &operator<<(ostream &output, Torso &t)
 }
 void Torso::displayTorso(ostream &output, Torso &t)
 {
-    //operator<<(cout, t);
     output << t << endl;
+}
+void Torso::displayTorso()
+{
+    cout << "\nName: " << RobotParts::getName() << endl;
+    cout << "Part #: " << RobotParts::getPartNumber() << endl;
+    cout << "Type: " << RobotParts::getType() << endl;
+    cout << "Weight: " << RobotParts::getWeight() << endl;
+    cout << "Cost: " << RobotParts::getCost() << endl;
+    cout << "Description: " << RobotParts::getDescription() << endl;
+    cout << "Battery Compartments: " << getBatteryCompartments() << endl;
 }
