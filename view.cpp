@@ -11,9 +11,11 @@ void View::main_menu(){
     cout << "Main Menu\n**************\n";
     cout << "1) Create Parts\n";
     cout << "2) Create Model\n";
-    cout << "3) Save\n";
-    cout << "4) Quit\n";
-    cout << "5) View Documentation.\n";
+    cout << "3) Display Parts\n";
+    cout << "4) Display Model\n";
+    cout << "5) Save\n";
+    cout << "6) Quit\n";
+    cout << "7) View Documentation.\n";
     cout << "Command?: ";
 }
 void View::createParts_menu(){

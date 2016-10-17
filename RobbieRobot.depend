@@ -21,7 +21,7 @@
 1476647067 c:\users\pdevo\desktop\robbierobot\arm.h
 	"robotParts.h"
 
-1476513438 c:\users\pdevo\desktop\robbierobot\robotparts.h
+1476696895 c:\users\pdevo\desktop\robbierobot\robotparts.h
 
 1476650493 source:c:\users\pdevo\desktop\robbierobot\battery.cpp
 	"std_lib_facilities.h"
@@ -30,12 +30,12 @@
 1476660806 c:\users\pdevo\desktop\robbierobot\battery.h
 	"robotParts.h"
 
-1476659457 source:c:\users\pdevo\desktop\robbierobot\controller.cpp
+1476691026 source:c:\users\pdevo\desktop\robbierobot\controller.cpp
 	"std_lib_facilities.h"
 	"controller.h"
 	"view.h"
 
-1476653919 c:\users\pdevo\desktop\robbierobot\controller.h
+1476690023 c:\users\pdevo\desktop\robbierobot\controller.h
 	"std_lib_facilities.h"
 	"robotparts.h"
 	"createRobotParts.h"
@@ -46,7 +46,7 @@
 	"locomotor.h"
 	"battery.h"
 
-1476654799 c:\users\pdevo\desktop\robbierobot\createrobotparts.h
+1476698344 c:\users\pdevo\desktop\robbierobot\createrobotparts.h
 	"std_lib_facilities.h"
 	"robotparts.h"
 	"head.h"
@@ -55,7 +55,7 @@
 	"locomotor.h"
 	"battery.h"
 
-1476647067 c:\users\pdevo\desktop\robbierobot\head.h
+1476688426 c:\users\pdevo\desktop\robbierobot\head.h
 	"robotParts.h"
 
 1476647067 c:\users\pdevo\desktop\robbierobot\torso.h
@@ -65,7 +65,7 @@
 1476647067 c:\users\pdevo\desktop\robbierobot\locomotor.h
 	"robotParts.h"
 
-1476660664 c:\users\pdevo\desktop\robbierobot\robotmodels.h
+1476698359 c:\users\pdevo\desktop\robbierobot\robotmodels.h
 	"createRobotParts.h"
 
 1476486204 c:\users\pdevo\desktop\robbierobot\view.h
@@ -82,7 +82,7 @@
 1476486204 c:\users\pdevo\desktop\robbierobot\robot_model.h
 	"create_parts.h"
 
-1476650825 source:c:\users\pdevo\desktop\robbierobot\createrobotparts.cpp
+1476698236 source:c:\users\pdevo\desktop\robbierobot\createrobotparts.cpp
 	"std_lib_facilities.h"
 	"createRobotParts.h"
 
@@ -116,11 +116,11 @@
 	"std_lib_facilities.h"
 	"robot_model.h"
 
-1476661950 source:c:\users\pdevo\desktop\robbierobot\robotmodels.cpp
+1476706648 source:c:\users\pdevo\desktop\robbierobot\robotmodels.cpp
 	"std_lib_facilities.h"
 	"robotModels.h"
 
-1476646705 source:c:\users\pdevo\desktop\robbierobot\robotparts.cpp
+1476696882 source:c:\users\pdevo\desktop\robbierobot\robotparts.cpp
 	"std_lib_facilities.h"
 	"robotParts.h"
 
@@ -137,11 +137,11 @@
 	"std_lib_facilities.h"
 	"torso.h"
 
-1476648362 source:c:\users\pdevo\desktop\robbierobot\view.cpp
+1476690557 source:c:\users\pdevo\desktop\robbierobot\view.cpp
 	"std_lib_facilities.h"
 	"view.h"
 
-1476654902 source:c:\users\pdevo\desktop\robbierobot\shop.cpp
+1476690023 source:c:\users\pdevo\desktop\robbierobot\shop.cpp
 	"std_lib_facilities.h"
 	"view.h"
 	"robotparts.h"

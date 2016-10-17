@@ -14,6 +14,7 @@
 
    public:
    	RobotParts(string n, int p, string t, double w, double c, string d);
+   	RobotParts();
    	void setName(string n);
    	void setPartNumber(int p);
    	void setType(string t);
@@ -26,10 +27,6 @@
    	double getWeight();
    	double getCost();
    	string getDescription();
-    RobotParts()
-    {
-
-    }
 
  };
  #endif

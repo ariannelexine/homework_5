@@ -18,6 +18,7 @@
  	vector<Locomotor> allLocomotors;
  	vector<Battery> allBatteries;
  public:
+    CreateRobotParts() {}
  	void createHead();
  	void createTorso();
  	void createArm();
@@ -33,8 +34,13 @@
  	Arm getArmAt(int i);
  	Locomotor getLocomotorAt(int i);
  	Battery getBatteryAt(int i);
+ 	int getSizeOfHead();
+ 	int getSizeOfTorso();
+ 	int getSizeOfArm();
+ 	int getSizeOfLocomotor();
+ 	int getSizeOfBattery();
  	void displayParts();
- 	CreateRobotParts(){};
+
  };
 
  inline Torso CreateRobotParts::getTorsoAt(int i)
@@ -57,4 +63,25 @@
  {
      return allBatteries.at(i);
  }
+ inline int CreateRobotParts::getSizeOfHead()
+ {
+     return allHeads.size();
+ }
+ inline int CreateRobotParts::getSizeOfTorso()
+ {
+     return allTorsos.size();
+ }
+ inline int CreateRobotParts::getSizeOfArm()
+ {
+     return allArms.size();
+ }
+ inline int CreateRobotParts::getSizeOfLocomotor()
+ {
+     return allLocomotors.size();
+ }
+ inline int CreateRobotParts::getSizeOfBattery()
+ {
+     return allBatteries.size();
+ }
+
  #endif

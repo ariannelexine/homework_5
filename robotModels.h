@@ -14,16 +14,24 @@ private:
  	    Locomotor locomotor;
  	    Head head;
  	    vector<Arm> arms;
- 	    vector<Battery> batteries;
+ 	    vector<int> batteries;
  	};
  	vector <model> allModel;
  	int armSize;
  	int batterySize;
+ 	vector<double> partsCost;
+ 	double totalPartsCost;
 
 public:
      RobotModels();
      void createRobotModels(CreateRobotParts&);
      void displayRobotModel();
+     double getTotalPartsCost();
+     void calculateTotalPartsCost();
 
  };
+ inline double RobotModels::getTotalPartsCost()
+ {
+    return totalPartsCost;
+ }
  #endif

@@ -205,33 +205,44 @@ void CreateRobotParts::showHeads(){
  				cout <<i<<") "<<allBatteries.at(i).getName()<<endl;
  		}
  	}
+
 void CreateRobotParts::displayParts()
 {
+    cout << "_______________________________________" << endl;
     cout << "\n********  Head Display ************" << endl;
+    cout << "_______________________________________" << endl;
     if(allHeads.size() == 0)
         cout << "\nNo head created\n";
     else
         for(int i = 0; i < allHeads.size(); i++)
             allHeads[i].displayHeads();
+    cout << "_______________________________________" << endl;
     cout << "\n********  Arm Display ************" << endl;
+    cout << "_______________________________________" << endl;
     if(allArms.size() == 0)
         cout << "\nNo Arms created\n";
     else
         for(int i = 0; i < allArms.size(); i++)
             allArms[i].displayArm();
+    cout << "_______________________________________" << endl;
     cout << "\n********  Torso Display ************" << endl;
+    cout << "_______________________________________" << endl;
     if(allTorsos.size() == 0)
         cout << "\nNo Torso created\n";
     else
         for(int i = 0; i < allTorsos.size(); i++)
             allTorsos[i].displayTorso();
+    cout << "_______________________________________" << endl;
     cout << "\n********  Locomotor Display ************" << endl;
+    cout << "_______________________________________" << endl;
     if(allLocomotors.size() == 0)
         cout << "\nNo Locomotors created\n";
     else
         for(int i = 0; i < allLocomotors.size(); i++)
             allLocomotors[i].displayLocomotor();
+    cout << "_______________________________________" << endl;
     cout << "\n********  Battery Display ************" << endl;
+    cout << "_______________________________________" << endl;
     if(allBatteries.size() == 0)
         cout << "\nNo Battery created\n";
     else

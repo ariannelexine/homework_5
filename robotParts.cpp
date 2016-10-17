@@ -1,7 +1,16 @@
 #include "std_lib_facilities.h"
 #include "robotParts.h"
 
+    RobotParts::RobotParts()
+    {
+        name = "None";
+        partNumber = -1;
+        type = "None";
+        weight = 0.0;
+        cost = 0.0;
+        description = "None";
 
+    }
 	RobotParts::RobotParts(string n, int p, string t, double w, double c, string d){
    		name = n;
    		partNumber = p;

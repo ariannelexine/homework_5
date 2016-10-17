@@ -15,13 +15,14 @@
 
  class Controller
  {
- private:
- 	CreateRobotParts& parts;
- 	RobotModels model;
- public:
- 	Controller (CreateRobotParts& constructorOf) : parts(constructorOf){};
- 	void partsController();
- 	void modelController();
+     private:
+        CreateRobotParts& parts;
+        RobotModels model;
+     public:
+        Controller (CreateRobotParts& constructorOf) : parts(constructorOf){};
+        void partsController();
+        void modelController();
+        void showControllerMenu();
 
     //friend ostream &operator<<(ostream &output, const Torso &t);
  };
