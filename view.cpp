@@ -1,3 +1,4 @@
+//10/17/2016 changes made: Added userSelection, customerOrderOptions, & salesOrderOptions functions
 #include "std_lib_facilities.h"
 #include "view.h"
 
@@ -13,9 +14,10 @@ void View::main_menu(){
     cout << "2) Create Model\n";
     cout << "3) Display Parts\n";
     cout << "4) Display Model\n";
-    cout << "5) Save\n";
-    cout << "6) Quit\n";
-    cout << "7) View Documentation.\n";
+    cout << "5) Order Menu\n";
+    cout << "6) Save\n";
+    cout << "7) Quit\n";
+    cout << "8) View Documentation.\n";
     cout << "Command?: ";
 }
 void View::createParts_menu(){
@@ -47,8 +49,34 @@ void View::report_menu(){
     cout << "2.1) View Robot Catalog\n";
     cout << "Command?: ";
 }
-
-
+void View::userSelection()
+{
+    cout << endl<<endl;
+    cout << "Select a User Type\n**************\n";
+    cout << "1) Sales Associate\n";
+    cout << "2) Customer\n";
+    cout << "3) Main Menu\n";
+    cout << "Command?: ";
+}
+void View::customerOrderOptions()
+{
+    cout << endl<<endl;
+    cout << "Order Menu\n**************\n";
+    cout << "5.1) Print Order History\n";
+    cout << "5.2) View Your Bill\n";
+    cout << "5.3) Main Menu\n";
+    cout << "Command?: ";
+}
+void View::salesOrderOptions()
+{
+    cout << endl<<endl;
+    cout << "Order Menu\n**************\n";
+    cout << "5.1) Create New Order\n";
+    cout << "5.2) Print Order Log\n";
+    cout << "5.3) Print Sales Associates Order Log\n";
+    cout << "5.4) Main Menu\n";
+    cout << "Command?: ";
+}
 void View::print_documentation(){
     cout << "This is a simple library program. Type in the numbers corresponding to the options listed into the request line to get started. Initially their is no publications, so step 1 would be to type 1 in the request line to add a new publication. To exit the program type any letters in the request line.";
 }

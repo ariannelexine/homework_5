@@ -23,6 +23,7 @@
         void partsController();
         void modelController();
         void showControllerMenu();
+        void ordersController();
 
     //friend ostream &operator<<(ostream &output, const Torso &t);
  };
