@@ -8,22 +8,44 @@ void CreateRobotParts::createHead()
 	int partNumber;
 	double weight, cost;
 
-	cin.ignore();
+	cin.ignore(1000, '\n');
 	cout <<"******* CREATING HEAD **********\n";
 	cout << "Name?: ";
 	getline(cin, name);
 	cout<< "Part Number?: ";
 	cin >> partNumber;
-	cin.ignore();
+	//Error handling
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Part Number?: ";
+		cin >> partNumber;
+	}
+	cin.ignore(1000, '\n');
 	//cout <<"Type?: ";
 	//getline(cin, type);
 	type = "Head";
 	cout<<"Weight?: ";
 	cin >> weight;
-	cin.ignore();
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Weight?: ";
+		cin >> weight;
+	}
+	cin.ignore(1000, '\n');
 	cout <<"Cost?: ";
 	cin >> cost;
-	cin.ignore();
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Cost?: ";
+		cin >> cost;
+	}
+	cin.ignore(1000, '\n');
 	cout <<"Descritpion?: ";
 	getline(cin, description);
 	//PUT ALL THESE ANSWERS INTO THE VECTOR allHeads.
@@ -42,26 +64,46 @@ void CreateRobotParts::createTorso(){
 	getline(cin, name);
 	cout<< "Part Number?: ";
 	cin >> partNumber;
-	cin.ignore();
-	//cout <<"Type?: ";
-	//getline(cin, type);
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Part Number?: ";
+		cin >> partNumber;
+	}
+	cin.ignore(1000, '\n');
 	type = "Torso";
 	cout<<"Weight?: ";
 	cin >> weight;
 	cin.ignore();
 	cout <<"Cost?: ";
 	cin >> cost;
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Cost?: ";
+		cin >> cost;
+	}
 	cin.ignore();
 	cout <<"Descritpion?: ";
 	getline(cin, description);
 	cout <<"How many battery compartment(s) does torso have (1, 2, or 3)?: ";
 	cin >> batteries;
-	while(batteries < 1 || batteries > 3)
-    {
-        cout << batteries << " is out of range!" << endl;
-        cout <<"How many battery compartment(s) does torso have (1, 2, or 3)?: ";
-	    cin >> batteries;
-    }
+	//ERROR HANDLING OF STRING INPUT
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"How many battery compartment(s) does torso have (1, 2, or 3)?: ";
+		cin >> batteries;
+		while(batteries < 1 || batteries > 3)
+    	{
+        	cout << batteries << " is out of range!" << endl;
+        	cout <<"How many battery compartment(s) does torso have (1, 2, or 3)?: ";
+	    	cin >> batteries;
+    	}
+	}
 	cin.ignore();
 	Torso t(name, partNumber, type, weight, cost, description, batteries);
 	allTorsos.push_back(t);
@@ -76,20 +118,46 @@ void CreateRobotParts::createArm(){
 	getline(cin, name);
 	cout<< "Part Number?: ";
 	cin >> partNumber;
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Part Number?: ";
+		cin >> partNumber;
+	}
 	cin.ignore();
-	//cout <<"Type?: ";
-	//getline(cin, type);
 	type = "Arm";
 	cout<<"Weight?: ";
 	cin >> weight;
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Weight?: ";
+		cin >> weight;
+	}
 	cin.ignore();
 	cout <<"Cost?: ";
 	cin >> cost;
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Cost?: ";
+		cin >> cost;
+	}
 	cin.ignore();
 	cout <<"Descritpion?: ";
 	getline(cin, description);
 	cout <<"Power consumed?: ";
 	cin >> powerConsumed;
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Power Consumed?: ";
+		cin >> powerConsumed;
+	}
 	cin.ignore();
 	Arm a(name, partNumber, type, weight, cost, description, powerConsumed);
 	allArms.push_back(a);
@@ -104,22 +172,55 @@ void CreateRobotParts::createLocomotor(){
 	getline(cin, name);
 	cout<< "Part Number?: ";
 	cin >> partNumber;
-	//cout <<"Type?: ";
-	//getline(cin, type);
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Part Number?: ";
+		cin >> partNumber;
+	}
 	type = "Locomotor";
 	cout<<"Weight?: ";
 	cin >> weight;
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Weight?: ";
+		cin >> weight;
+	}
 	cin.ignore();
 	cout <<"Cost?: ";
 	cin >> cost;
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Cost?: ";
+		cin >> cost;
+	}
 	cin.ignore();
 	cout <<"Descritpion?: ";
 	getline(cin, description);
 	cout <<"Power Consumed?: ";
 	cin >> powerConsumed;
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Power Consumed?: ";
+		cin >> powerConsumed;
+	}
 	cin.ignore();
 	cout <<"Max Speed?: ";
 	cin >> maxSpeed;
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Max Speed?: ";
+		cin >> maxSpeed;
+	}
 	cin.ignore();
 	Locomotor l(name, partNumber, type, weight, cost, description, powerConsumed, maxSpeed);
 	allLocomotors.push_back(l);
@@ -134,20 +235,46 @@ void CreateRobotParts::createBattery(){
 	getline(cin, name);
 	cout<< "Part Number?: ";
 	cin >> partNumber;
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Part Number?: ";
+		cin >> partNumber;
+	}
 	cin.ignore();
-	//cout <<"Type?: ";
-	//getline(cin, type);
 	type = "Battery";
 	cout<<"Weight?: ";
 	cin >> weight;
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Weight?: ";
+		cin >> weight;
+	}
 	cin.ignore();
 	cout <<"Cost?: ";
 	cin >> cost;
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Cost?: ";
+		cin >> cost;
+	}
 	cin.ignore();
 	cout <<"Descritpion?: ";
 	getline(cin, description);
 	cout <<"Energy Contained?: ";
 	cin >> energyContained;
+	while(cin.fail()){
+		cin.clear();
+		cin.ignore(1000, '\n');
+		cerr <<"Not a valid answer. Try again.\n";
+		cout <<"Energy Contained?: ";
+		cin >> energyContained;
+	}
 	cin.ignore();
 	Battery b(name, partNumber, type, weight, cost, description, energyContained);
 	allBatteries.push_back(b);
