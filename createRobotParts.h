@@ -2,7 +2,7 @@
  #define __CREATEROBOTPARTS_H
 
 #include "std_lib_facilities.h"
-#include "robotparts.h"
+#include "robotParts.h"
 #include "head.h"
 #include "torso.h"
 #include "arm.h"
@@ -40,7 +40,9 @@
  	int getSizeOfLocomotor();
  	int getSizeOfBattery();
  	void displayParts();
-
+ 	void saveParts();
+ 	void saveProgramParts();    // this method will store information only for the the program to retrieve data from
+ 	void retrieveParts();       // method retrieve the data that is saved in savedProgramParts()
  };
 
  inline Torso CreateRobotParts::getTorsoAt(int i)

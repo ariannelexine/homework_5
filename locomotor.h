@@ -21,5 +21,7 @@
    	void setMaxSpeed(int speed);
    	int getMaxSpeed();
    	void displayLocomotor();
+    void saveLocomotorToFile(fstream& myFile);
+    void saveLocomotorToProgramFile(fstream& myFile);
  };
  #endif

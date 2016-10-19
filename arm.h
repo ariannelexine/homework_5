@@ -17,5 +17,7 @@
    	void setPowerConsumed(double power);
    	double getPowerConsumed();
    	void displayArm();
+   	void saveArmToFile(fstream& myFile);
+   	void saveArmToProgramFile(fstream& myFile);
  };
  #endif

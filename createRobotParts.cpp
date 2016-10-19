@@ -1,5 +1,6 @@
 #include "std_lib_facilities.h"
 #include "createRobotParts.h"
+#include <stdlib.h>     // use for atoi
 
 /*THESE ARE USED TO CREATE PARTS FOR THE ROBOT AND ARE STORED IN VECTOR OF CLASSES*/
 void CreateRobotParts::createHead()
@@ -43,8 +44,6 @@ void CreateRobotParts::createTorso(){
 	cout<< "Part Number?: ";
 	cin >> partNumber;
 	cin.ignore();
-	//cout <<"Type?: ";
-	//getline(cin, type);
 	type = "Torso";
 	cout<<"Weight?: ";
 	cin >> weight;
@@ -77,8 +76,6 @@ void CreateRobotParts::createArm(){
 	cout<< "Part Number?: ";
 	cin >> partNumber;
 	cin.ignore();
-	//cout <<"Type?: ";
-	//getline(cin, type);
 	type = "Arm";
 	cout<<"Weight?: ";
 	cin >> weight;
@@ -104,8 +101,6 @@ void CreateRobotParts::createLocomotor(){
 	getline(cin, name);
 	cout<< "Part Number?: ";
 	cin >> partNumber;
-	//cout <<"Type?: ";
-	//getline(cin, type);
 	type = "Locomotor";
 	cout<<"Weight?: ";
 	cin >> weight;
@@ -135,8 +130,6 @@ void CreateRobotParts::createBattery(){
 	cout<< "Part Number?: ";
 	cin >> partNumber;
 	cin.ignore();
-	//cout <<"Type?: ";
-	//getline(cin, type);
 	type = "Battery";
 	cout<<"Weight?: ";
 	cin >> weight;
@@ -248,4 +241,235 @@ void CreateRobotParts::displayParts()
     else
         for(int i = 0; i < allBatteries.size(); i++)
             allBatteries[i].displayBattery();
+}
+void CreateRobotParts::saveParts()
+{
+    string fileName;
+    fstream myFile;
+
+    myFile.open("Robot_Parts.txt", ios::out | ios::trunc);     // write to file and append to end
+    if (!myFile)       // if myFile stream is corrupted
+        throw runtime_error("can’t open output file " + fileName);
+
+    myFile << "_______________________________________" << endl;
+    myFile << "\n********  Head Display ************" << endl;
+    myFile << "_______________________________________" << endl;
+    if(allHeads.size() == 0)
+        myFile << "\nNo head created\n";
+    else
+        for(int i = 0; i < allHeads.size(); i++)
+            allHeads[i].saveHeadToFile(myFile);
+    myFile << "_______________________________________" << endl;
+    myFile << "\n********  Arm Display ************" << endl;
+    myFile << "_______________________________________" << endl;
+    if(allArms.size() == 0)
+        myFile << "\nNo Arms created\n";
+    else
+        for(int i = 0; i < allArms.size(); i++)
+            allArms[i].saveArmToFile(myFile);
+
+    myFile << "_______________________________________" << endl;
+    myFile << "\n********  Torso Display ************" << endl;
+    myFile << "_______________________________________" << endl;
+    if(allTorsos.size() == 0)
+        myFile << "\nNo Torso created\n";
+    else
+        for(int i = 0; i < allTorsos.size(); i++)
+            allTorsos[i].saveTorsoToFile(myFile);
+    myFile << "_______________________________________" << endl;
+    myFile << "\n********  Locomotor Display ************" << endl;
+    myFile << "_______________________________________" << endl;
+    if(allLocomotors.size() == 0)
+        myFile << "\nNo Locomotors created\n";
+    else
+        for(int i = 0; i < allLocomotors.size(); i++)
+            allLocomotors[i].saveLocomotorToFile(myFile);
+    myFile << "_______________________________________" << endl;
+    myFile << "\n********  Battery Display ************" << endl;
+    myFile << "_______________________________________" << endl;
+    if(allBatteries.size() == 0)
+        myFile << "\nNo Battery created\n";
+    else
+        for(int i = 0; i < allBatteries.size(); i++)
+            allBatteries[i].saveBatteryToFile(myFile);
+    myFile << endl;
+    myFile.close();  // close file after use
+}
+
+void CreateRobotParts::saveProgramParts()
+{
+    string fileName;
+    fstream myFile;
+
+
+    myFile.open("Parts_Program_File.txt", ios::out | ios::trunc);     // open the file to read and write from
+    if (!myFile)       // if myFile stream is corrupted, throw an exception to the runtime_error
+        throw runtime_error("can’t open output file " + fileName);
+
+    if(allHeads.size() == 0)
+    {
+       myFile << "#" << endl;
+       myFile << "\nNo head created\n";
+    }
+    else
+        for(int i = 0; i < allHeads.size(); i++)
+            allHeads[i].saveHeadToProgramFile(myFile);
+
+
+    if(allArms.size() == 0)
+    {
+        myFile << "#" << endl;
+        myFile << "\nNo Arms created\n";
+    }
+    else
+        for(int i = 0; i < allArms.size(); i++)
+            allArms[i].saveArmToProgramFile(myFile);
+
+    if(allTorsos.size() == 0)
+    {
+        myFile << "#" << endl;
+        myFile << "\nNo Torso created\n";
+    }
+    else
+        for(int i = 0; i < allTorsos.size(); i++)
+            allTorsos[i].saveTorsoToProgramFile(myFile);
+
+    if(allLocomotors.size() == 0)
+    {
+        myFile << "#" << endl;
+        myFile << "\nNo Locomotors created\n";
+    }
+    else
+        for(int i = 0; i < allLocomotors.size(); i++)
+            allLocomotors[i].saveLocomotorToProgramFile(myFile);
+
+    if(allBatteries.size() == 0)
+    {
+        myFile << "#" << endl;
+        myFile << "\nNo Battery created\n";
+    }
+    else
+        for(int i = 0; i < allBatteries.size(); i++)
+            allBatteries[i].saveBatteryToProgramFile(myFile);
+    myFile.close();  // close file after use
+}
+void CreateRobotParts::retrieveParts ()
+{
+    string line;
+    ifstream readFile;
+    string name;
+    int partNumber;
+    string type;
+    double weight;
+    double cost;
+    string description;
+    int batteries;
+    double energyContained;
+    double powerConsumed;
+   	int maxSpeed;
+
+    readFile.open("Parts_Program_File.txt", ios::in);     // open the file to read from
+    if (readFile)       // if myFile stream is corrupted, throw an exception to the runtime_error
+    {
+        while (getline(readFile, line))              // read data from the file -> Parts_Program_File.txt
+        {
+            if(line == "#")
+                continue;                           // continue onto next line
+            if(line == "Head")
+            {
+                type = line;
+                getline(readFile, line);
+                partNumber = atoi(line.c_str());    // convert string to integer and assign it partNumber
+                getline(readFile, line);
+                name = line;
+                getline(readFile, line);
+                weight = atof(line.c_str());        // convert string to double and assign it
+                getline(readFile, line);
+                cost = atof(line.c_str ());
+                getline(readFile, line);
+                description = line;
+                Head h(name, partNumber, type, weight, cost, description);
+                allHeads.push_back(h);
+            }
+            else if(line == "Torso")
+            {
+                type = line;
+                getline(readFile, line);
+                partNumber = atoi(line.c_str());        // convert string to integer and assign it partNumber
+                getline(readFile, line);
+                name = line;
+                getline(readFile, line);
+                weight = atof(line.c_str());            // convert string to double and assign it
+                getline(readFile, line);
+                cost = atof(line.c_str ());
+                getline(readFile, line);
+                description = line;
+                getline(readFile, line);
+                batteries = atoi(line.c_str());        // convert string to integer and assign it partNumber
+                Torso t(name, partNumber, type, weight, cost, description, batteries);
+                allTorsos.push_back(t);
+            }
+            else if(line == "Battery")
+            {
+                type = line;
+                getline(readFile, line);
+                partNumber = atoi(line.c_str());        // convert string to integer and assign it partNumber
+                getline(readFile, line);
+                name = line;
+                getline(readFile, line);
+                weight = atof(line.c_str());            // convert string to double and assign it
+                getline(readFile, line);
+                cost = atof(line.c_str ());
+                getline(readFile, line);
+                description = line;
+                getline(readFile, line);
+                energyContained = atof(line.c_str());
+                Battery b(name, partNumber, type, weight, cost, description, energyContained);  // create a new instance of battery
+                allBatteries.push_back(b);  // push it to all batteries vector
+            }
+            else if(line == "Arm")
+            {
+                type = line;
+                getline(readFile, line);
+                partNumber = atoi(line.c_str());        // convert string to integer and assign it partNumber
+                getline(readFile, line);
+                name = line;
+                getline(readFile, line);
+                weight = atof(line.c_str());            // convert string to double and assign it
+                getline(readFile, line);
+                cost = atof(line.c_str ());
+                getline(readFile, line);
+                description = line;
+                getline(readFile, line);
+                powerConsumed = atof(line.c_str());
+                Arm a(name, partNumber, type, weight, cost, description, powerConsumed);  // Create new instance of arm
+                allArms.push_back(a);   // push new instance of arm to allArms
+
+            }
+            else if (line == "Locomotor")
+            {
+                type = line;
+                getline(readFile, line);
+                partNumber = atoi(line.c_str());        // convert string to integer and assign it partNumber
+                getline(readFile, line);
+                name = line;
+                getline(readFile, line);
+                weight = atof(line.c_str());            // convert string to double and assign it
+                getline(readFile, line);
+                cost = atof(line.c_str ());
+                getline(readFile, line);
+                description = line;
+                getline(readFile, line);
+                powerConsumed = atof(line.c_str());
+                getline(readFile, line);
+                maxSpeed = atoi(line.c_str());
+                Locomotor l(name, partNumber, type, weight, cost, description, powerConsumed, maxSpeed); // create new instance
+                allLocomotors.push_back(l);     // push newly created locomotor to all locomotor vector
+            }
+            else;               // do nothing
+        }
+        readFile.close();       // close file after finish using
+    }
+    else
+        cout << "There was no file to retrieve data from for robot parts." << endl;
 }

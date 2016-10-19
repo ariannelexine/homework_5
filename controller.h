@@ -4,7 +4,7 @@
 
 #include "std_lib_facilities.h"
 //#include "view.h"
-#include "robotparts.h"
+#include "robotParts.h"
 #include "createRobotParts.h"
 #include "robotModels.h"
 #include "torso.h"
@@ -23,7 +23,5 @@
         void partsController();
         void modelController();
         void showControllerMenu();
-
-    //friend ostream &operator<<(ostream &output, const Torso &t);
  };
  #endif

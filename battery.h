@@ -14,5 +14,7 @@
    	void setEnergyContained(double energy);
    	double getEnergyContained();
    	void displayBattery();
+   	void saveBatteryToFile(fstream& myFile);
+   	void saveBatteryToProgramFile(fstream& myFile);
  };
  #endif
