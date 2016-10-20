@@ -1,13 +1,12 @@
-#include "std_lib_facilities.h"
+//#include "std_lib_facilities.h"
 #include "customer.h"
 
-Customer::Customer()
+void Customer::setName(string n)
 {
-    name = "None";
-    phoneNumber = "None";
+    name = n;
 }
 
-Customer::~Customer()
+string Customer::getName()
 {
-
+    return name;
 }

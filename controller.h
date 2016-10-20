@@ -12,19 +12,23 @@
 #include "arm.h"
 #include "locomotor.h"
 #include "battery.h"
+#include "salesAssociate.h"
+#include "orders.h"
+#include "customer.h"           //added
 
  class Controller
  {
      private:
         CreateRobotParts& parts;
-        RobotModels model;
+        RobotModels& model;
+        Orders& orders;
+   
      public:
-        Controller (CreateRobotParts& constructorOf) : parts(constructorOf){};
+        Controller (CreateRobotParts& constructorOf, RobotModels& constructor, Orders& orderConst) : parts(constructorOf), model(constructor), orders(orderConst) {};
         void partsController();
         void modelController();
         void showControllerMenu();
         void ordersController();
-
-    //friend ostream &operator<<(ostream &output, const Torso &t);
+        void customerController();
  };
  #endif

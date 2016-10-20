@@ -9,7 +9,9 @@
 int main()
 {
     CreateRobotParts robotPartConstruct;
-    Controller controller(robotPartConstruct);
+    RobotModels modelsConstruct;
+    Orders ordersConst;
+    Controller controller(robotPartConstruct, modelsConstruct, ordersConst);
 
     controller.showControllerMenu();
 
