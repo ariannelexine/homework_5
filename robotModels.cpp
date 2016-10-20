@@ -31,63 +31,64 @@ void RobotModels::createRobotModels(CreateRobotParts &p){
   cin.ignore();
   
   
-    cout << "\nPlease choose a head: " << endl;
-    p.showHeads();
-    if (p.getSizeOfHead() != 0)
-    {
-      index = readInput();
-      mdl.head = p.getHeadAt(index);
-      mdl.batteries.push_back(0);             // push_back(0) because head doesn't need a battery
-      partsCost.push_back(p.getHeadAt(index).getCost());
-      fileIndexes.push_back(index);
-    }
+  cout << "\nPlease choose a head: " << endl;
+  p.showHeads();
+  if (p.getSizeOfHead() != 0)
+  {
+    index = readInput();
+    mdl.head = p.getHeadAt(index);
+    mdl.batteries.push_back(0);             // push_back(0) because head doesn't need a battery
+    partsCost.push_back(p.getHeadAt(index).getCost());
+    fileIndexes.push_back(index);
+  }
   
-    cout << "\nPlease choose arms: " << endl;
-    int counter = 2;
-    p.showArms();
-    if (p.getSizeOfArm() != 0)
-    {
-      cout << "You can select a maximum of 2 arms " << endl;
-      do{
+  cout << "\nPlease choose arms: " << endl;
+  int counter = 2;
+  p.showArms();
+  if (p.getSizeOfArm() != 0)
+  {
+    cout << "You can select a maximum of 2 arms " << endl;
+    do{
+      index = readInput();
+      while (index < 0 || index > p.getSizeOfArm())
+      {
+        cout << index << " is out of range.\nTry again...\n" << endl;
+        p.showArms();
+        cout << "You can select a maximum of 2 arms " << endl;
         index = readInput();
-        while (index < 0 || index > p.getSizeOfArm())
-        {
-          cout << index << " is out of range.\nTry again...\n" << endl;
-          p.showArms();
-          cout << "You can select a maximum of 2 arms " << endl;
-          index = readInput();
-        }
-        mdl.arms.push_back(p.getArmAt(index));
-        partsCost.push_back(p.getArmAt(index).getCost());
-        fileIndexes.push_back(index);
-        counter--;
-      }while(counter > 0 && counter < 2);
-      mdl.batteries.push_back(0);
-    }
-
-    cout << "\nPlase choose a torso: " << endl;
-    p.showTorsos();
-    if (p.getSizeOfTorso() != 0)
-    {
-      index = readInput();
-      mdl.batteries.push_back(p.getTorsoAt(index).getBatteryCompartments());   // this is the number of batteries that can fit in torso
-      mdl.torso = p.getTorsoAt(index);
-      partsCost.push_back(p.getTorsoAt(index).getCost());
+      }
+      mdl.arms.push_back(p.getArmAt(index));
+      partsCost.push_back(p.getArmAt(index).getCost());
       fileIndexes.push_back(index);
-    }
+      counter--;
+    }while(counter > 0 && counter < 2);
+    mdl.batteries.push_back(0);
+  }
   
-    cout << "\nPlease choose a locomotor: " << endl;
-    p.showLocomotors();
-    if (p.getSizeOfLocomotor() != 0)
-    {
-      index = readInput();
-      mdl.locomotor = p.getLocomotorAt(index);
-      mdl.batteries.push_back(0);
-      partsCost.push_back(p.getLocomotorAt(index).getCost());
-      fileIndexes.push_back(index);
-    }
+  cout << "\nPlase choose a torso: " << endl;
+  p.showTorsos();
+  if (p.getSizeOfTorso() != 0)
+  {
+    index = readInput();
+    mdl.batteries.push_back(p.getTorsoAt(index).getBatteryCompartments());   // this is the number of batteries that can fit in torso
+    mdl.torso = p.getTorsoAt(index);
+    partsCost.push_back(p.getTorsoAt(index).getCost());
+    fileIndexes.push_back(index);
+  }
   
-
+  cout << "\nPlease choose a locomotor: " << endl;
+  p.showLocomotors();
+  if (p.getSizeOfLocomotor() != 0)
+  {
+    index = readInput();
+    mdl.locomotor = p.getLocomotorAt(index);
+    mdl.batteries.push_back(0);
+    partsCost.push_back(p.getLocomotorAt(index).getCost());
+    fileIndexes.push_back(index);
+    
+  }
+  
+  
   
   /*
    cout << "Do you need battery for robot model? ";
@@ -120,12 +121,12 @@ void RobotModels::createRobotModels(CreateRobotParts &p){
   armSize = mdl.arms.size();
   batterySize = mdl.batteries.size();
   fileIndexes.push_back(-1);          // -1 is pushed to keep track of when a model ended
- // fileIndexes.push_back(index);
+  // fileIndexes.push_back(index);
   
   
   
   
-
+  
 }
 void RobotModels::calculateTotalPartsCost()
 {
