@@ -1,7 +1,7 @@
 //
 #include "std_lib_facilities.h"
 #include "view.h"
-#include "robotParts.h"
+#include "robotparts.h"
 #include "createRobotParts.h"
 #include "controller.h"
 #include "robotModels.h"
@@ -9,7 +9,9 @@
 int main()
 {
     CreateRobotParts robotPartConstruct;
-    Controller controller(robotPartConstruct);
+    RobotModels modelsConstruct;
+    Orders ordersConst;
+    Controller controller(robotPartConstruct, modelsConstruct, ordersConst);
 
     controller.showControllerMenu();
 

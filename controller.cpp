@@ -1,5 +1,6 @@
 #include "std_lib_facilities.h"
 #include "controller.h"
+#include "robotModels.h"
 #include "view.h"
 #include <fstream>
 
@@ -8,10 +9,11 @@ void Controller::showControllerMenu()
     View newView;
     int key = 0;
 
-    parts.retrieveParts();          // retrieve data that is store in file
-    model.retrieveModel(parts);     // retrieve data that is store in file
-                                    // retrieveModel needs to see the data of parts in order to retrieve the data
-    while (true)
+  parts.retrieveParts();          // retrieve data that is store in file
+  model.retrieveModel(parts);     // retrieve data that is store in file
+  // retrieveModel needs to see the data of parts in order to retrieve the data
+ 
+  while (true)
     {
         newView.main_menu();
         cin >> key;
@@ -30,17 +32,20 @@ void Controller::showControllerMenu()
                 model.displayRobotModel();
             break;
             case 5:
-                parts.saveParts();
-                parts.saveProgramParts();
-                model.saveModel();
-                model.saveProgramModel();
-                cout << "Robot parts and robot model have been saved. " << endl;
+                ordersController();
             break;
             case 6:
+            parts.saveParts();
+            parts.saveProgramParts();
+            model.saveModel();
+            model.saveProgramModel();
+            cout << "Robot parts and robot model have been saved. " << endl;
+            break;
+            case 7:
                 cout << "exiting..." << endl;
                 exit(0);
             break;
-            case 7:
+            case 8:
                 newView.print_documentation();
             break;
             default:
@@ -80,7 +85,70 @@ void Controller::modelController(){
 	View view;
 
     model.createRobotModels(parts);
+    //model.displayRobotModel();
 
 }
-
-
+void Controller::ordersController()
+{
+    View newView;
+    double key = 0;
+    
+    while( key != 3)
+    {
+        newView.userSelection();
+        cin >> key;
+        if( key == 1 )
+        {
+          SalesAssociate associate;
+          string name;
+          cout << "\nAssociate Name: ";
+          cin.ignore();
+          getline(cin, name);
+          associate.setName(name);
+          cout << associate.getName();
+          
+        while(key != 5.4)
+        {
+          newView.salesOrderOptions();
+          cin >> key;
+          if (key == 5.1)
+          {
+            orders.createOrders(model, associate);
+          }
+          else if(key == 5.2)
+          {
+            orders.displayOrders();
+          }
+        }
+          
+        }
+        else if( key == 2 )//-------------------------------------------------------------------------------------------
+        {
+            View newView;
+            double key = 0;
+            int tok;
+            
+            while ( key != 5.3 )
+            {
+                newView.customerOrderOptions();                                                     //add
+                cin >> key;
+                
+                if ( key == 5.1 )
+                    orders.orderHistory();                                    //call Order class to view customer's orders
+                else if ( key == 5.2 )
+                {
+                    orders.orderHistory();                                         //call Order class to view customer's bill
+                    
+                }
+                else if( key == 5.3 )
+                    cout << "returning to main menu...\n";
+                else
+                    cout << "\nXXXXX Invalid key, Try again XXXXX" << endl;                 //basic err chk
+            }
+        }//-----------------------------------------------------------------------------------------------------------------
+        else if( key == 3 )
+            cout << "returning to main menu...\n";
+        else
+            cout << "\nXXXXX Invalid key, Try again XXXXX" << endl;
+    }
+}

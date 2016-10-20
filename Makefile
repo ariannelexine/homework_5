@@ -1,3 +1,4 @@
+
 CXXFLAGS =
 
 all: executable
@@ -6,9 +7,9 @@ debug: CXXFLAGS += -g
 debug: executable
 
 rebuild: clean executable
-executable: shop.o robotParts.o view.o torso.o robotModels.o orders.o locomotor.o head.o customer.o createRobotParts.o controller.o battery.o arm.o
-	$(CXX) $(CXXFLAGS) shop.o robotParts.o view.o torso.o robotModels.o orders.o locomotor.o head.o customer.o createRobotParts.o controller.o battery.o arm.o
-shop.o: shop.cpp std_lib_facilities.h view.h robotParts.h createRobotParts.h controller.h robotModels.h
+executable: shop.o robotParts.o view.o torso.o robotModels.o orders.o locomotor.o head.o customer.o createRobotParts.o controller.o battery.o arm.o salesAssociate.o
+	$(CXX) $(CXXFLAGS) shop.o robotParts.o view.o torso.o robotModels.o orders.o locomotor.o head.o customer.o createRobotParts.o controller.o battery.o arm.o salesAssociate.o
+shop.o: shop.cpp std_lib_facilities.h view.h robotparts.h createRobotParts.h controller.h robotModels.h
 	$(CXX) $(CXXFLAGS) -w -c shop.cpp
 torso.o: torso.cpp torso.h std_lib_facilities.h
 	$(CXX) $(CXXFLAGS) -w -c torso.cpp
@@ -34,5 +35,7 @@ battery.o: battery.cpp std_lib_facilities.h battery.h
 	$(CXX) $(CXXFLAGS) -w -c battery.cpp
 arm.o: arm.cpp std_lib_facilities.h arm.h
 	$(CXX) $(CXXFLAGS) -w -c arm.cpp
+salesAssociate.o: salesAssociate.cpp std_lib_facilities.h salesAssociate.h
+	$(CXX) $(CXXFLAGS) -w -c salesAssociate.cpp
 clean:
 	rm -f *.o a.out
