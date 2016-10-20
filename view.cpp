@@ -78,5 +78,7 @@ void View::salesOrderOptions()
   cout << "Command?: ";
 }
 void View::print_documentation(){
-  cout << "This is a simple library program. Type in the numbers corresponding to the options listed into the request line to get started. Initially their is no publications, so step 1 would be to type 1 in the request line to add a new publication. To exit the program type any letters in the request line.";
+  cout << "Robbie Robots Shop Manager is a protoype proposal package, featuring a text menu or command line interface.\n";
+  cout <<"IMPORTANT.\n";
+  cout <<"You must create a robot part of each (head, torso, arm, locomotor, battery) before you save.\n";
 }
