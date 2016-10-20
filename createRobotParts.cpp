@@ -46,7 +46,7 @@ void CreateRobotParts::createHead()
    cin >> cost;
    }
    cin.ignore(1000, '\n');
-   cout <<"Descritpion?: ";
+   cout <<"Description?: ";
    getline(cin, description);
    //PUT ALL THESE ANSWERS INTO THE VECTOR allHeads.
    Head h(name, partNumber, type, weight, cost, description);
@@ -152,7 +152,7 @@ void CreateRobotParts::createArm(){
    cin >> cost;
    }
    cin.ignore();
-   cout <<"Descritpion?: ";
+   cout <<"Description?: ";
    getline(cin, description);
    cout <<"Power consumed?: ";
    cin >> powerConsumed;
@@ -207,7 +207,7 @@ void CreateRobotParts::createLocomotor(){
    cin >> cost;
    }
    cin.ignore();
-   cout <<"Descritpion?: ";
+   cout <<"Description?: ";
    getline(cin, description);
    cout <<"Power Consumed?: ";
    cin >> powerConsumed;
@@ -273,7 +273,7 @@ void CreateRobotParts::createBattery(){
    cin >> cost;
    }
    cin.ignore();
-   cout <<"Descritpion?: ";
+   cout <<"Description?: ";
    getline(cin, description);
    cout <<"Energy Contained?: ";
    cin >> energyContained;

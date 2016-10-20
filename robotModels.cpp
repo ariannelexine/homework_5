@@ -47,14 +47,14 @@ void RobotModels::createRobotModels(CreateRobotParts &p){
   p.showArms();
   if (p.getSizeOfArm() != 0)
   {
-    cout << "You can select a maximum of 2 arms " << endl;
+    cout << "Select 2 arms " << endl;
     do{
       index = readInput();
       while (index < 0 || index > p.getSizeOfArm())
       {
         cout << index << " is out of range.\nTry again...\n" << endl;
         p.showArms();
-        cout << "You can select a maximum of 2 arms " << endl;
+        cout << "Select 2 arms " << endl;
         index = readInput();
       }
       mdl.arms.push_back(p.getArmAt(index));
@@ -65,7 +65,7 @@ void RobotModels::createRobotModels(CreateRobotParts &p){
     mdl.batteries.push_back(0);
   }
   
-  cout << "\nPlase choose a torso: " << endl;
+  cout << "\nPlease choose a torso: " << endl;
   p.showTorsos();
   if (p.getSizeOfTorso() != 0)
   {
